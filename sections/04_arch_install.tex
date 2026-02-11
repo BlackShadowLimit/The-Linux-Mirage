@@ -2,5 +2,10 @@
 \subsection {Manually}
 
 \subsection {Archinstall}
-要安裝 Arch Linux 除了手動打指令外，現在也有個比較方便的腳本安裝，相較以往繁雜指令安裝，\texttt{archinstall} 提供一個方便的 TUI 介面適合快速安裝。
+要安裝 Arch Linux 除了手動打指令外，現在也有個比較方便的腳本安裝，相較以往繁雜指令安裝，\code{archinstall} 提供一個方便的 TUI 介面適合快速安裝。
 
+\subsubsection {Reflector}
+不過在開始之前，必須先確保網路連線正常，詳細部分可以回去參考 Arch Wiki。接著建議設定 mirrors 可以讓之後安裝的連線速度比較快，可以使用 \code{reflector -h} 他有詳細的參數指引。其中 mirror 預設儲存路徑為 \code{/etc/pacman.d/mirrorlist}，我通常會使用以下指令。
+\begin{codeblock}{bash}
+reflector
+\end{codeblock}
