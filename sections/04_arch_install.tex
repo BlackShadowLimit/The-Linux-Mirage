@@ -7,5 +7,8 @@
 \subsubsection {Reflector}
 不過在開始之前，必須先確保網路連線正常，詳細部分可以回去參考 Arch Wiki。接著建議設定 mirrors 可以讓之後安裝的連線速度比較快，可以使用 \code{reflector -h} 他有詳細的參數指引。其中 mirror 預設儲存路徑為 \code{/etc/pacman.d/mirrorlist}，我通常會使用以下指令。
 \begin{codeblock}{bash}
-reflector
+reflector --country Taiwan,Japan \
+          --sort rate --n 10 \
+          --save /etc/pacman.d/mirrorlist
 \end{codeblock}
+我會先用 \code{country} 找出台灣跟鄰近日本這兩個地區，接著我的排序法是用 \code{rate}，因為我的目的是要找出最快的10個，如果不到10個也沒關係，\code{reflector} 會自動處理，然後將結果紀錄在 \code{/etc/pacman.d/mirrorlist}。
