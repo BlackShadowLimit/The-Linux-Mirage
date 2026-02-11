@@ -7,12 +7,56 @@
 	footskip=1cm
 }
 
+\usepackage{parskip}
+\setlength{\parskip}{0.8em}
+
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
 	linkcolor=black,
-	urlcolor=cyan,
+	urlcolor=blue!70!cyan,
 	pdfborder={0 0 0}
 }
 
 \usepackage{bookmark}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codebg}{RGB}{245, 245, 245}
+
+\usepackage[most]{tcolorbox}
+\newtcbox{\code}{
+    on line, 
+    boxsep=0pt, left=3pt, right=3pt, top=1.5pt, bottom=1.5pt,
+    arc=3pt, 
+    colback=codebg, 
+    colframe=gray!30, 
+    fontupper=\ttfamily\small,
+    boxrule=0.5pt
+}
+
+\newtcblisting{codeblock}[1]{
+    arc=3pt,
+    outer arc=3pt,
+    colback=codebg,
+    colframe=gray!30,
+    boxrule=0.5pt,
+    top=0mm,
+	bottom=0mm,
+	middle=1mm,
+	boxsep=2pt,
+	enhanced,
+    title={#1},
+    colbacktitle=gray!20,
+    coltitle=black!70,
+    fonttitle=\ttfamily\scriptsize\bfseries,
+    attach boxed title to top right={yshift=-2mm, xshift=-2mm},
+    boxed title style={sharp corners, boxrule=0.5pt, colframe=gray!30},
+    listing only,
+    listing options={
+        language={#1},
+        basicstyle=\ttfamily\small,
+        breaklines=true,
+        showstringspaces=false
+    }
+}
