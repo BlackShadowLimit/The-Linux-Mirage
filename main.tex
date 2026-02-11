@@ -1,0 +1,29 @@
+%! TEX program = xelatex
+
+\documentclass[12pt, a4paper]{article}
+
+\input{styles/preamble.tex}
+\input{styles/fonts_config.tex}
+
+\title{
+	\Huge \textbf{The Linux Mirage} \\
+	\vspace{0.8em}
+	\Large \textsf{Still Hate it BTW}
+}
+\author{ShadowithBlack}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\input{sections/04_arch_install.tex}
+
+\end{document}
